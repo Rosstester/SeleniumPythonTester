@@ -27,6 +27,7 @@ class GitHubLogin(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
 
+#TC_01 - Try to LogIn to Github.com using valid credentials
     def test_login_to_GitHub_with_valid_credentials(self):
         driver = self.driver
         driver.get(Server_url)
@@ -40,6 +41,7 @@ class GitHubLogin(unittest.TestCase):
         self.assertEqual(ASSERT_TEXT_AFTER_LOGIN.text, Text_to_assert_after_login)
         driver.close()
 
+#TC_02 - Try to LogIn to Github.com using NOT valid credentials (wrong password)
     def test_login_to_GitHub_with_NOT_valid_credentials(self):
         driver = self.driver
         driver.get(Server_url)
